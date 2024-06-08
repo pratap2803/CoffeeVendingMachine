@@ -20,3 +20,49 @@ The CoffeeMachine class is the main class that manages the coffee vending machin
 The CoffeeMachine class initializes the coffee menu and ingredients in its constructor. It provides methods to display the menu, select a coffee, dispense coffee, and update ingredient quantities.
 The hasEnoughIngredients method checks if there are sufficient ingredients to make a selected coffee, while the updateIngredients method updates the ingredient quantities after dispensing a coffee.
 The CoffeeVendingMachine class is the entry point of the application and demonstrates the usage of the coffee vending machine. It creates an instance of the machine, displays the menu, and simulates concurrent user requests using an ExecutorService.
+
+
+Coffee
++----------------+
+| - name: String |
+| - price: double|
+| - recipe: Map<Ingredient, Integer>|
+| + getName(): String |
+| + getPrice(): double|
+| + getRecipe(): Map<Ingredient, Integer>|
++----------------+
+
+Ingredient
++----------------+
+| - name: String |
+| - quantity: int|
+| + getName(): String |
+| + getQuantity(): int|
+| + updateQuantity(amount: int): void|
++----------------+
+
+Payment
++----------------+
+| - amount: double|
+| + getAmount(): double|
++----------------+
+
+CoffeeMachine
++----------------+
+| - instance: CoffeeMachine |
+| - coffeeMenu: List<Coffee> |
+| - ingredients: Map<String, Ingredient>|
+| + getInstance(): CoffeeMachine |
+| + displayMenu(): void |
+| + selectCoffee(name: String): Coffee |
+| + dispenseCoffee(coffee: Coffee, payment: Payment): void |
+| - intializeIngredients(): void |
+| - intializeCoffeeMenu(): void |
++----------------+
+
+CoffeeVendingMachineDemo
++----------------+
+| + run(): void |
+| + main(args: String[]): void|
++----------------+
+
